@@ -1,2 +1,4 @@
 .pytest_cache/
 repo_test/
+__pycache__/
+.pytest_cache/
