@@ -14,7 +14,7 @@ class CalculatorAreaTriangle(CalculatorMaster):
         self.base = base
         self.height = height
     def calculate(self):
-        return (self.base * self.height) / 2
+        return int((self.base * self.height) / 2)
 
 class CalculatorAreaSquare(CalculatorMaster):
     def __init__(self,side):
@@ -27,7 +27,7 @@ class CalculatorAreaCircle(CalculatorMaster):
         self.radius = radius
         self.pi = 3.14
     def calculate(self):
-        return self.pi * (self.radius^2)
+        return self.pi * (self.radius * self.radius)
 
 class ICalculator:
     def __init__(self,algorith):

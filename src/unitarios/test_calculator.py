@@ -13,7 +13,7 @@ def test_area_circle():
     radius = faker.random_number()
     calc = CalculatorAreaCircle(radius)
     result = calc.calculate()
-    assert result == (radius^2) * 3.14
+    assert result == (radius*radius) * 3.14
 
 def test_area_square():
     side = faker.random_number()
