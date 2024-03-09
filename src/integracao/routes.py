@@ -3,6 +3,7 @@ from flask import Blueprint
 
 from src.unitarios.calculator import ICalculator,CalculatorAreaCircle,CalculatorAreaSquare,CalculatorAreaTriangle
 
+
 routes = Blueprint('routes', __name__)
 
 @routes.route("/", methods=["GET"])
@@ -19,7 +20,8 @@ def calc_triangle():
     return jsonify(f'The Area of Triangle is {result}')
 @routes.route("/square", methods=["POST"])
 def calc_square():
-    dados = request.get_json()
+    dados = request.environ['data']
+    print(dados)
     side = dados['side']
     calc = ICalculator(CalculatorAreaSquare(side))
     result = calc.calculate()
